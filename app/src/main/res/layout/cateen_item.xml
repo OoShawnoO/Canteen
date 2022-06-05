@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="5dp"
+    android:background="@color/white"
+    >
+
+
+    <ImageView
+        android:id="@+id/cateenImage"
+        android:layout_width="98dp"
+        android:layout_height="95dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        app:layout_constraintVertical_bias="0.047"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+		android:textStyle="bold"
+        android:id="@+id/cateenName"
+        android:layout_width="228dp"
+        android:layout_height="36dp"
+        android:text="TextView"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/cateenContent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintHorizontal_bias="0.743"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+    <TextView
+		android:textStyle="bold"
+        android:id="@+id/cateenContent"
+        android:layout_width="228dp"
+        android:layout_height="31dp"
+        android:layout_marginBottom="12dp"
+        android:text="TextView"
+        android:textColor="#CDC9C9"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/cateenState"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintHorizontal_bias="0.743"
+        app:layout_constraintStart_toStartOf="@+id/guideline4" />
+
+    <TextView
+		android:textStyle="bold"
+        android:id="@+id/cateenState"
+        android:layout_width="91dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="#C1FFC1"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#76EE00"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintHorizontal_bias="0.395"
+        app:layout_constraintStart_toStartOf="@+id/guideline4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="153dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="6dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="390dp" />
+
+    <TextView
+		android:textStyle="bold"
+        android:id="@+id/cateenDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="#919191"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintHorizontal_bias="0.708"
+        app:layout_constraintStart_toEndOf="@+id/cateenState"
+        app:layout_constraintTop_toBottomOf="@+id/cateenContent"
+        app:layout_constraintVertical_bias="0.578" />
+</androidx.constraintlayout.widget.ConstraintLayout>

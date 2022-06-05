@@ -5,12 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
-
+val CateenItem = arrayListOf<Cateen>()
 /**
  * A simple [Fragment] subclass.
  * Use the [HomeFragment.newInstance] factory method to
@@ -35,6 +37,53 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initData()
+        val recycler = view.findViewById<RecyclerView>(R.id.cateen_recycler)
+        recycler.layoutManager = LinearLayoutManager(activity)
+        recycler.adapter = CateenAdapter(CateenItem)
+    }
+
+    fun initData(){
+        CateenItem.add(Cateen().apply {
+            name = "西南大学食堂"
+            content = "非常的好吃"
+            distance = "0.12km"
+            state = "正在营业"
+            Image = R.drawable.meishi
+        })
+        CateenItem.add(Cateen().apply {
+            name = "天生丽街喵喵烤肉"
+            content = "非常的好吃"
+            distance = "0.48km"
+            state = "正在营业"
+            Image = R.drawable.meishi2
+        })
+        CateenItem.add(Cateen().apply {
+            name = "北木川"
+            content = "非常的好吃"
+            distance = "0.33km"
+            state = "正在营业"
+            Image = R.drawable.meishi3
+        })
+        CateenItem.add(Cateen().apply {
+            name = "东北人家饺子馆"
+            content = "非常的好吃"
+            distance = "1.12km"
+            state = "正在营业"
+            Image = R.drawable.meishi4
+        })
+        CateenItem.add(Cateen().apply {
+            name = "晓秧锅"
+            content = "非常的好吃"
+            distance = "2.13km"
+            state = "正在营业"
+            Image = R.drawable.meishi
+        })
+
     }
 
     companion object {
