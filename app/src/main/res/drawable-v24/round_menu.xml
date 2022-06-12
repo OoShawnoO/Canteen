@@ -6,14 +6,14 @@
 
     <gradient
         android:angle="270"
-        android:endColor="#f15a22"
-        android:startColor="#f15a22" />
+        android:endColor="#7bbfea"
+        android:startColor="#7bbfea" />
 
     <!-- 圆角 -->
     <corners
-        android:bottomLeftRadius="20dip"
+        android:bottomLeftRadius="10dip"
         android:bottomRightRadius="20dip"
-        android:topLeftRadius="20dip"
+        android:topLeftRadius="10dip"
         android:topRightRadius="20dip" />
 
 </shape>

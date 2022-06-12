@@ -1,22 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#F2F2F2"
     tools:context=".SelectFragment">
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:scaleX="1.2"
-        android:bottomLeftRadius="20dip"
-        android:bottomRightRadius="20dip"
-        android:topLeftRadius="20dip"
-        android:topRightRadius="20dip"
-        android:src="@drawable/meishi5"
+        android:src="@drawable/eat"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/sidemenu"
+        android:background="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        android:layout_marginEnd="10dp"
         />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dish_recycler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sidemenu"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:listitem="@layout/dish_item" />
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import org.w3c.dom.Text
 
 class DishAdapter(val Dishs:ArrayList<Dish>):RecyclerView.Adapter<DishAdapter.DishViewHolder>(){
     inner class DishViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){

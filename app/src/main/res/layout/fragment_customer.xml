@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2"
+    tools:context=".CustomerFragment">
+
+    <RelativeLayout
+        android:id="@+id/customTop"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/customImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="50dp"
+            android:src="@drawable/custom" />
+
+        <TextView
+            android:id="@+id/customName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="180dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="50dp"
+            android:text="穿仔葵"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/customContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="180dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="50dp"
+            android:text="一个小丑"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            />
+
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/customerOption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customTop">
+
+        <TextView
+            android:id="@+id/customDinDan"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/round_block"
+            android:padding="20dp"
+            android:text="我的订单"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:textStyle="bold"
+
+            />
+
+        <TextView
+            android:id="@+id/customKeFu"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/round_block"
+            android:padding="20dp"
+            android:text="我的客服"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/customElse"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/round_block"
+            android:padding="20dp"
+            android:text="其他服务"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/customReply"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/round_block"
+            android:padding="20dp"
+            android:text="意见反馈"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
