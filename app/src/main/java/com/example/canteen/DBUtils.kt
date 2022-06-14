@@ -11,7 +11,7 @@ class DBUtils(
 ) : SQLiteOpenHelper(context, name, null,version) {
 
     override fun onCreate(db: SQLiteDatabase) {
-        db.execSQL("CREATE TABLE '${Set.TABLE}'(\n" +
+        db.execSQL("CREATE TABLE ${Set.TABLE} (\n" +
                 "\t${Set.COL_ID} integer PRIMARY KEY autoincrement,\n" +
                 "\t${Set.COL_NAME} text,\n" +
                 "\t${Set.COL_PRICE} text,\n" +

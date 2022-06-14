@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#F2F2F2"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -46,13 +46,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.9" />
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/Set"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/set_recyler"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        android:visibility="gone"
+        android:background="#fedcbd"
         app:layout_constraintBottom_toTopOf="@+id/bottom"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:listitem="@layout/set_item" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

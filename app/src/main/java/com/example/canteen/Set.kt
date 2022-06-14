@@ -8,7 +8,7 @@ class Set {
     var Image:Int = 0
 
     companion object{
-        val TABLE = "Set"
+        val TABLE = "Set_table"
         val COL_ID = "id"
         val COL_NAME = "name"
         val COL_PRICE = "price"
