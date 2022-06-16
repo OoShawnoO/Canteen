@@ -13,6 +13,7 @@ class SelectFragment : Fragment() {
 
     val dishItems = arrayListOf<Dish>()
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -30,7 +31,8 @@ class SelectFragment : Fragment() {
         initData()
         val recycler = view.findViewById<RecyclerView>(R.id.dish_recycler)
         recycler.layoutManager = LinearLayoutManager(activity)
-        recycler.adapter = DishAdapter(dishItems)
+        var dish = DishAdapter(dishItems)
+        recycler.adapter = dish
         val manager = activity?.supportFragmentManager
         val trans = manager?.beginTransaction()
         trans?.replace(R.id.sidemenu,SideMenuFragment())

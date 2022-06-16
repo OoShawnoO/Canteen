@@ -109,6 +109,11 @@ class SetAdapter: RecyclerView.Adapter<SetAdapter.SetViewHolder>() {
 
 
 class MainActivity : AppCompatActivity() {
+    var mListener:(()->Unit)? = null
+    operator fun invoke(name1: String,price1: String,count1: Int,image1: Int){
+        saveInDb(name1,price1,count1,image1)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -139,7 +144,6 @@ class MainActivity : AppCompatActivity() {
 
             true
         }
-
         val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.top)
         toolbar.setNavigationIcon(R.drawable.small)
         toolbar.setTitle("点菜app")
