@@ -15,10 +15,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat.getSystemService
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentContainerView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.canteen.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -114,7 +116,7 @@ class SetAdapter: RecyclerView.Adapter<SetAdapter.SetViewHolder>() {
 
 class MainActivity : AppCompatActivity() {
     var serviceOn = false
-
+    lateinit var binding:ActivityMainBinding
 
 
     operator fun invoke(name1: String,price1: String,count1: Int,image1: Int){
@@ -124,7 +126,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
+//        val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.top)
+//        toolbar.setNavigationIcon(R.drawable.small)
+//        toolbar.setTitle("点菜app")
+        binding.top.setNavigationIcon(R.drawable.small)
+        binding.top.setTitle("点菜app")
 
         val intent = Intent(this,CanteenService::class.java)
 
@@ -170,9 +177,7 @@ class MainActivity : AppCompatActivity() {
 
             true
         }
-        val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.top)
-        toolbar.setNavigationIcon(R.drawable.small)
-        toolbar.setTitle("点菜app")
+
 
 
         val shopcar = findViewById<FloatingActionButton>(R.id.shopcar)
