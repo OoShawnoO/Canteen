@@ -2,6 +2,7 @@ package com.example.canteen
 
 import android.annotation.SuppressLint
 import android.content.ContentValues
+import android.content.Intent
 import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,8 +10,11 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebView
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentContainerView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -109,14 +113,20 @@ class SetAdapter: RecyclerView.Adapter<SetAdapter.SetViewHolder>() {
 
 
 class MainActivity : AppCompatActivity() {
-    var mListener:(()->Unit)? = null
+    var serviceOn = false
+
+
+
     operator fun invoke(name1: String,price1: String,count1: Int,image1: Int){
         saveInDb(name1,price1,count1,image1)
     }
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val intent = Intent(this,CanteenService::class.java)
 
         val manager = supportFragmentManager
         val trans = manager.beginTransaction()
@@ -140,6 +150,22 @@ class MainActivity : AppCompatActivity() {
                     trans1.replace(R.id.container,CustomerFragment())
                     trans1.commit()
                 }
+                R.id.menu_service -> {
+                    if(!serviceOn){
+                        startService(intent)
+                        var toast = Toast.makeText(this,"服务开启成功", Toast.LENGTH_LONG)
+                        val webintent = Intent(this,WebActivity::class.java)
+                        startActivity(webintent)
+                        toast.show()
+                        serviceOn = true
+                    }
+                    else{
+                        stopService(intent)
+                        var toast = Toast.makeText(this,"服务关闭成功", Toast.LENGTH_LONG)
+                        toast.show()
+                        serviceOn = false
+                    }
+                }
             }
 
             true
@@ -159,6 +185,10 @@ class MainActivity : AppCompatActivity() {
                 set.visibility = View.VISIBLE
             }
         }
+
+
+
+
         init()
 
     }
