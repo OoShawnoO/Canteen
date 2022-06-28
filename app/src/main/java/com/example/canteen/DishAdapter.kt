@@ -10,9 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import org.w3c.dom.Text
 
 class DishAdapter(val Dishs:ArrayList<Dish> = arrayListOf<Dish>()):RecyclerView.Adapter<DishAdapter.DishViewHolder>(){
-
-
-
     inner class DishViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
         val name = itemView.findViewById<TextView>(R.id.DishName)
         val content = itemView.findViewById<TextView>(R.id.DishContent)

@@ -9,23 +9,17 @@ import android.net.Uri
 class SetProvider: ContentProvider() {
     private val setDir = 0
     private val setItem = 1
-
     lateinit var utils:DBUtils
-
     private val uriMatcher = UriMatcher(UriMatcher.NO_MATCH)
-
     private val authority = "com.example.canteen.provider"
-
     init{
         uriMatcher.addURI(authority,"set",setDir)
         uriMatcher.addURI(authority,"set/#",setItem)
     }
-
     override fun onCreate(): Boolean {
         utils = DBUtils(context,"set.db",3)
         return true
     }
-
     override fun query(
         uri: Uri,
         projection: Array<out String>?,
@@ -46,7 +40,6 @@ class SetProvider: ContentProvider() {
         }
         return rs
     }
-
     override fun getType(uri: Uri): String? {
         val dir = "vnd.android.cursor.dir/vnd.$authority.set"
         val item = "vnd.android.cursor.dir/vnd.$authority.set"
@@ -56,7 +49,6 @@ class SetProvider: ContentProvider() {
             else-> dir
         }
     }
-
     override fun insert(uri: Uri, values: ContentValues?): Uri? {
         var rs:Uri? = null
 
@@ -70,7 +62,6 @@ class SetProvider: ContentProvider() {
         db.close()
         return rs
     }
-
     override fun delete(uri: Uri, selection: String?, selectionArgs: Array<out String>?): Int {
         var rs = 0
         val db = utils.writableDatabase
@@ -84,10 +75,7 @@ class SetProvider: ContentProvider() {
         db.close()
         return rs
     }
-
     override fun update(uri: Uri, values: ContentValues?, selection: String?, selectionArgs: Array<out String>?): Int {
         return 0
     }
-
-
 }

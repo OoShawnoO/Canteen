@@ -131,7 +131,7 @@ class MainActivity : AppCompatActivity() {
 //        toolbar.setNavigationIcon(R.drawable.small)
 //        toolbar.setTitle("点菜app")
         binding.top.setNavigationIcon(R.drawable.small)
-        binding.top.setTitle("点菜app")
+        binding.top.setTitle("馋了么app")
 
         val intent = Intent(this,CanteenService::class.java)
 
